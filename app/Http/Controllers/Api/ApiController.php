@@ -10,7 +10,7 @@ class ApiController extends Controller
 {
     public function firstCard(){
 
-        $first= Card::orderBy('id','ASC')->first();
+        $first= Card::orderBy('id','asc')->first();
        return response()->json($first);
 }
 

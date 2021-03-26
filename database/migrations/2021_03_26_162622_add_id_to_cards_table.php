@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNewToCardTable extends Migration
+class AddIdToCardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddNewToCardTable extends Migration
      */
     public function up()
     {
-        Schema::table('card', function (Blueprint $table) {
-            $table->boolean('new');
+        Schema::table('cards', function (Blueprint $table) {
+            $table->bigIncrements('id');
         });
     }
 
@@ -25,8 +25,8 @@ class AddNewToCardTable extends Migration
      */
     public function down()
     {
-        Schema::table('card', function (Blueprint $table) {
-            $table->dropColumn('new');
+        Schema::table('cards', function (Blueprint $table) {
+            $table->dropColumn('id');
         });
     }
 }
