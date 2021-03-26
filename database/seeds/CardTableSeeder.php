@@ -13,7 +13,21 @@ class CardTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $cards = New Card;
+        for($i = 0; $i < 20 ; $i++){
+
+            $card = New Card;
+            $card->name = $faker->name();
+            $card->model = $faker->name();
+            $card->price = rand(15,200);
+            $card->year = $faker->dateTimeBetween($startDate = '-10 years', $endDate = 'now');
+            $card->new = true;
+
+            $card->save();
+
+
+
+
+        }
 
     }
 }
